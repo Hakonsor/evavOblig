@@ -3,12 +3,15 @@ import java.util.Random;
 
 public class Tallspill
 {
+  final private int GRENSE = 198;
   private int tall;
   private boolean won = true;
+
   public int nyttTall()
   {
+
 	  Random nyttTall = new Random();
-	  return nyttTall.nextInt(198)+1;
+	  return nyttTall.nextInt(GRENSE)+1;
   }
   public void visMelding(String melding)
   {
