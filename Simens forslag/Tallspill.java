@@ -28,6 +28,7 @@ public class Tallspill{
 
 	Jeg har ikke noe behov for at metoden skal brukes i
 	driverklassen, derfor har jeg satt metodetilgangen til 'private'
+	på den og alle andre metoder som ikke brukes i driverprogrammet.
 
 	*/
 
@@ -36,7 +37,8 @@ public class Tallspill{
 		JOptionPane.showMessageDialog(null,melding);
 
 	} // Slutt på visMelding-metoden
-
+	
+	// Metode som sjekker om brukeren har gjettet et for lite tall
 	private void forLite(int gjetning) {
 
 		if (gjetning < riktigTall) {
@@ -46,7 +48,9 @@ public class Tallspill{
 		}
 
 	} // Slutt på forLite-metoden
-
+	
+	
+	// Metode som sjekker om brukeren har gjettet et for stort tall
 	private void forStort(int gjetning) {
 		if (gjetning > riktigTall) {
 
@@ -55,7 +59,8 @@ public class Tallspill{
 		}
 
 	} // Slutt på forStort-metoden
-
+	
+	// Metode som avslutter en spillrunde
 	public void avsluttRunde(int antall, int gjetning) {
 		if (gjetning == riktigTall) {
 
@@ -66,6 +71,7 @@ public class Tallspill{
 
 	} // Slutt på avsluttRunde-metoden
 
+	// Metode som lar driverklassen kjøre spillet. Er derfor gitt public tilgang.
 	public void kjørSpill() {
 
 		// Initialiserer tellervariabel
@@ -116,6 +122,7 @@ public class Tallspill{
 
 	} // Slutt på kjørSpill-metoden
 
+	// TODO: Burde være private, trenger kommentar
 	public void nyttSpill() {
 
 		String[] alternativ = { "Ja", "Nei"};
