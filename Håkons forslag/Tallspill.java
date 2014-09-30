@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.util.Random;
 
 public class Tallspill
 {
@@ -6,7 +7,8 @@ public class Tallspill
   private boolean won = true;
   public int nyttTall()
   {
-	  return (int) (Math.random() * 100);
+	  Random nyttTall = new Random();
+	  return nyttTall.nextInt(198)+1;
   }
   public void visMelding(String melding)
   {
