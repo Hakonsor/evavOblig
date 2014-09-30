@@ -7,26 +7,24 @@ public class Tallspill{
 	Random tilfeldig = new Random();
 
 	// Datafelter
-	private int riktigTall,antall,gjetning,øvreGrense,nedreGrense;
+	private int riktigTall,antall,gjetning,Ã¸vreGrense,nedreGrense;
 
 	// Metoder
 
 	private int nyttTall() {
-		øvreGrense = 199; // Eksklusiv 200 heltall
-		nedreGrense = 1; // Eksklusiv 0 heltall
+		Ã¸vreGrense = 200; // Eksklusiv 200 heltall
+		nedreGrense = 0; // Eksklusiv 0 heltall
 
+		return (int)(Math.random()*((Ã¸vreGrense-1)-(nedreGrense+1)) + (nedreGrense+1));
 
-		// TODO: Fix random generator to be exclusive and still function
-		return (int)(Math.random()*((øvreGrense)-(nedreGrense)) + nedreGrense);
-
-	} // Slutt på nyttTall-metoden
+	} // Slutt pÃ¥ nyttTall-metoden
 
 	/*
 
-	visMelding-metoden brukes for å slippe å skerive ut den relativt
+	visMelding-metoden brukes for Ã¥ slippe Ã¥ skerive ut den relativt
 	lange metoden showMessageDialog fra JOptionPane, samtidig som
-	dette øker lesbarheten til koden, og gjør at driverklassen ikke
-	har behov for å importere noe som helst.
+	dette Ã¸ker lesbarheten til koden, og gjÃ¸r at driverklassen ikke
+	har behov for Ã¥ importere noe som helst.
 
 	Jeg har ikke noe behov for at metoden skal brukes i
 	driverklassen, derfor har jeg satt metodetilgangen til 'private'
@@ -37,38 +35,38 @@ public class Tallspill{
 
 		JOptionPane.showMessageDialog(null,melding);
 
-	} // Slutt på visMelding-metoden
+	} // Slutt pÃ¥ visMelding-metoden
 
 	private void forLite(int gjetning) {
 
 		if (gjetning < riktigTall) {
 
-			visMelding(gjetning + " er for lite!\nDu har gjettet " + antall + " ganger. \nPrøv igjen.");
+			visMelding(gjetning + " er for lite!\nDu har gjettet " + antall + " ganger. \nPrÃ¸v igjen.");
 
 		}
 
-	} // Slutt på forLite-metoden
+	} // Slutt pÃ¥ forLite-metoden
 
 	private void forStort(int gjetning) {
 		if (gjetning > riktigTall) {
 
-			visMelding(gjetning + " er for stort!\nDu har gjettet " + antall + " ganger. \nPrøv igjen.");
+			visMelding(gjetning + " er for stort!\nDu har gjettet " + antall + " ganger. \nPrÃ¸v igjen.");
 
 		}
 
-	} // Slutt på forStort-metoden
+	} // Slutt pÃ¥ forStort-metoden
 
 	public void avsluttRunde(int antall, int gjetning) {
 		if (gjetning == riktigTall) {
 
-			String riktig = gjetning + " er riktig!\nDu gjettet riktig på " + antall
-							+ " forsøk.";
+			String riktig = gjetning + " er riktig!\nDu gjettet riktig pÃ¥ " + antall
+							+ " forsÃ¸k.";
 			visMelding(riktig);
 		}
 
-	} // Slutt på avsluttRunde-metoden
+	} // Slutt pÃ¥ avsluttRunde-metoden
 
-	public void kjørSpill() {
+	public void kjÃ¸rSpill() {
 
 		// Initialiserer tellervariabel
 		antall = 0;
@@ -82,13 +80,13 @@ public class Tallspill{
 			antall = antall + 1;
 
 			// Motta informasjon fra bruker
-			// "gjetningtest" brukes for å undersøke om verdien er innenfor intervallet vi har valgt
-			String gjetningtest = JOptionPane.showInputDialog("Jeg tenker på et tall mellom 0 og 200. \nPrøv å gjette på tallet: ");
+			// "gjetningtest" brukes for Ã¥ undersÃ¸ke om verdien er innenfor intervallet vi har valgt
+			String gjetningtest = JOptionPane.showInputDialog("Jeg tenker pÃ¥ et tall mellom 0 og 200. \nPrÃ¸v Ã¥ gjette pÃ¥ tallet: ");
 			if (gjetningtest.length() > 0) {
 
 				gjetning = Integer.parseInt(gjetningtest);
 
-				if ((gjetning > (nedreGrense - 1)) && (gjetning < (øvreGrense + 1))) {
+				if ((gjetning > (nedreGrense - 1)) && (gjetning < (Ã¸vreGrense + 1))) {
 
 					// Hint til bruker
 					forLite(gjetning);
@@ -98,7 +96,7 @@ public class Tallspill{
 
 				else {
 
-				visMelding("Ugyldig verdi! \nDu har gjettet " + antall + " ganger så langt.");
+				visMelding("Ugyldig verdi! \nDu har gjettet " + antall + " ganger sÃ¥ langt.");
 
 				}
 
@@ -106,30 +104,30 @@ public class Tallspill{
 
 			else {
 
-				visMelding("Ugyldig verdi! \nDu har gjettet " + antall + " ganger så langt.");
+				visMelding("Ugyldig verdi! \nDu har gjettet " + antall + " ganger sÃ¥ langt.");
 
 			}
 
-		} // Slutt på do-while
+		} // Slutt pÃ¥ do-while
 		while (!(gjetning == riktigTall));
 
 		avsluttRunde(antall, gjetning);
 		nyttSpill();
 
-	} // Slutt på kjørSpill-metoden
+	} // Slutt pÃ¥ kjÃ¸rSpill-metoden
 
 	public void nyttSpill() {
 
 		String[] alternativ = { "Ja", "Nei"};
 		int svar = JOptionPane.showOptionDialog( null,
-		          "Vil du prøve en runde til ?",
+		          "Vil du prÃ¸ve en runde til ?",
 		          "Gratulerer!", JOptionPane.YES_NO_OPTION,
 		          JOptionPane.QUESTION_MESSAGE, null, alternativ,
 		          alternativ[ 0 ] );
 
   		if (svar == JOptionPane.YES_OPTION) {
 
-  			kjørSpill();
+  			kjÃ¸rSpill();
   			nyttSpill();
 
 		}
