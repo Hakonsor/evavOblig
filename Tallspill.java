@@ -14,7 +14,11 @@ public class Tallspill {
 	public void visMelding(String melding) {
 
 		//Viser parameterens innhold i en meldingsboks.
-		melding = "Vi fant ikke noen hensiktsmessig bruk for denne metoden, derfor er den tom.";
+
+		/* Vi valgt å ikke ta denne koden i bruk, da vi syns brukergrenesnittet og programmet
+		blir mer elegant om vi deklarerer de i hver metode (henholdsvis pga vindustittelen,
+		JOptionPane.X_MESSAGE funksjonen osv. Dette resulterer i noen ekstra linjer kode,
+		som er litt repetativ, men vi syns sluttproduktet ble best på denne måten.*/
 
 	}
 
