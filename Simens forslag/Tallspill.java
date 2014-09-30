@@ -122,8 +122,8 @@ public class Tallspill{
 
 	} // Slutt på kjørSpill-metoden
 
-	// TODO: Burde være private, trenger kommentar
-	public void nyttSpill() {
+	// Selv-repeterende metode som brukes i kjørSpill for å starte på nytt
+	private void nyttSpill() {
 
 		String[] alternativ = { "Ja", "Nei"};
 		int svar = JOptionPane.showOptionDialog( null,
