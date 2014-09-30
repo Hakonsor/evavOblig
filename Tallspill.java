@@ -1,14 +1,17 @@
 import javax.swing.*;
+import java.util.Random;
 
 public class Tallspill {
 
-	//Nødvendige datafelt.
+		//Nødvendige datafelt.
+		final private int GRENSE = 198;
 
-	public int nyttTall() {
 
-		//Trekker og returnerer et slumptall mellom 0 og 200.
+		public int nyttTall() {
 
-		return (int)(Math.random()*200);
+			//Trekker og returnerer et slumptall mellom 0 og 200.
+			Random nyttTall = new Random();
+			return nyttTall.nextInt(GRENSE)+1;
 	}
 
 	public void visMelding(String melding) {
