@@ -9,27 +9,27 @@ public class UnikeTall {
 	// Datafelt
 	int[] tallArray;
 	int arrayTall,antallLike;
-	private static final int NEDRE_GRENSE = 100, ØVRE_GRENSE = 1000;
+	private static final int NEDRE_GRENSE = 100, Ã˜VRE_GRENSE = 1000;
 
 
-	// Konstruktører
+	// KonstruktÃ¸rer
 	public UnikeTall(int lengde) {
 		tallArray = new int[lengde];
 		arrayFyller();
 
-	} // Slutt på konstruktør med verdi
+	} // Slutt pÃ¥ konstruktÃ¸r med verdi
 
 	public UnikeTall() {
 		tallArray = new int[50];
 		arrayFyller();
 
-	} // Slutt på konstruktør uten parametre
+	} // Slutt pÃ¥ konstruktÃ¸r uten parametre
 
 
 	/*
-	Metode som undersøker om et tall allerede finnes i arrayet
+	Metode som undersÃ¸ker om et tall allerede finnes i arrayet
 
-	Metoden mottar et heltall som så sjekkes for hver indeks av hele tallArray,
+	Metoden mottar et heltall som sÃ¥ sjekkes for hver indeks av hele tallArray,
 	ved hjelp av en if-test. I tilfellet hvor if-testen returnerer 'true' vil
 	metoden returnere 'true'. I tilfellet hvor if-testen returnerer 'false' vil
 
@@ -58,7 +58,7 @@ public class UnikeTall {
 
 			do {
 
-				arrayTall = (NEDRE_GRENSE) + tilfeldig.nextInt((ØVRE_GRENSE)-(NEDRE_GRENSE-1));
+				arrayTall = (NEDRE_GRENSE) + tilfeldig.nextInt((Ã˜VRE_GRENSE)-(NEDRE_GRENSE-1));
 
 			}
 
@@ -91,7 +91,7 @@ public class UnikeTall {
 
 	}
 
-		private int arrayStørst() {
+		private int arrayStÃ¸rst() {
 
 			for (int i = 1; i < tallArray.length; i++) {
 
@@ -112,7 +112,7 @@ public class UnikeTall {
 
 	}
 
-
+	// Hele denne metoden brukes eksklusivt til testing, og skal ikke vÃ¦re med i det ferdige programmet
 	public void arrayTest() {
 
 		double prosent = (double) likeTall.size() / tallArray.length * 100;
@@ -136,7 +136,7 @@ public class UnikeTall {
 		}
 
 		System.out.println("Minste element: \t" + arrayMinst() + "\n");
-		System.out.println("Største element: \t" + arrayStørst() + "\n");
+		System.out.println("StÃ¸rste element: \t" + arrayStÃ¸rst() + "\n");
 		System.out.println("Prosent omvalg: \t" + prosent);
 	}
 
