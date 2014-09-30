@@ -14,7 +14,7 @@ public class Tallspill {
 	public void visMelding(String melding) {
 
 		//Viser parameterens innhold i en meldingsboks.
-		melding = "Vi fant ikke noen hensiktsmessig bruk for denne metoden, derfor er den tom."
+		melding = "Vi fant ikke noen hensiktsmessig bruk for denne metoden, derfor er den tom.";
 
 	}
 
