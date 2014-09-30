@@ -4,6 +4,10 @@ import java.util.Random;
 
 public class UnikeTall {
 
+	//Deklarerer grenser for tallene som skal settes inn i tabellen
+	public static final int ØVREGRENSE = 900;
+	public static final int NEDREGRENSE = 100;
+
 	//Deklarasjon av array for lagring av tilfeldige heltall og andre nødvendige variabler og/eller konstanter.  >
 
 	int[] heltallTabell;
@@ -41,9 +45,11 @@ public class UnikeTall {
 	parametre og heller ikke returnere noen verdi.*/
 
 	public void fylle(){
+
 		Random generator = new Random();
+
 		for(int i=0;i<heltallTabell.length;i++){
-			int sjekker = 100 + generator.nextInt(900);
+			int sjekker = NEDREGRENSE + generator.nextInt(ØVREGRENSE);
 			if(tallSjekker(sjekker)) {
 				i--;
 			}
