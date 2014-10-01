@@ -5,14 +5,14 @@ import java.util.Random;
 public class UnikeTall {
 
 	//Deklarerer grenser for tallene som skal settes inn i tabellen
-	public static final int ØVREGRENSE = 900;
+	public static final int Ã˜VREGRENSE = 900;
 	public static final int NEDREGRENSE = 100;
 
-	//Deklarasjon av array for lagring av tilfeldige heltall og andre nødvendige variabler og/eller konstanter.  >
+	//Deklarasjon av array for lagring av tilfeldige heltall og andre nÃ¸dvendige variabler og/eller konstanter.  >
 
 	int[] heltallTabell;
 
-	//Konstruktør som mottar arrayens lengde som parameter og oppretter arrayen.
+	//KonstruktÃ¸r som mottar arrayens lengde som parameter og oppretter arrayen.
 
 	public UnikeTall(int lengde) {
 		heltallTabell = new int[lengde];
@@ -20,7 +20,7 @@ public class UnikeTall {
 	}
 
 
-	/*Metode som skal undersøke om et gitt tall finnes i arrayen fra før.
+	/*Metode som skal undersÃ¸ke om et gitt tall finnes i arrayen fra fÃ¸r.
 	Tallet det letes etter skal mottas som parameter.
 	Metoden skal returnere true hvis tallet finnes i arrayen.
 	Hvis ikke skal metoden returnere false.*/
@@ -40,7 +40,7 @@ public class UnikeTall {
 
 
 	/*Metode som skal fylle arrayen med tilfeldige tall mellom 100 og 1000,
-	begge grenser inkludert. Metoden skal gjøre dette på en måte
+	begge grenser inkludert. Metoden skal gjÃ¸re dette pÃ¥ en mÃ¥te
 	som sikrer at alle tallene er forskjellige. Metoden skal ikke ha
 	parametre og heller ikke returnere noen verdi.*/
 
@@ -49,7 +49,7 @@ public class UnikeTall {
 		Random generator = new Random();
 
 		for(int i=0;i<heltallTabell.length;i++){
-			int sjekker = NEDREGRENSE + generator.nextInt(ØVREGRENSE);
+			int sjekker = NEDREGRENSE + generator.nextInt(Ã˜VREGRENSE);
 			if(tallSjekker(sjekker)) {
 				i--;
 			}
@@ -76,7 +76,7 @@ public class UnikeTall {
 	}
 
 
-	//Metode som finner og returnerer det største tallet i arrayen.
+	//Metode som finner og returnerer det stÃ¸rste tallet i arrayen.
 
 	public int storsteTall() {
 		int storst = heltallTabell[0];
@@ -105,14 +105,16 @@ public class UnikeTall {
 		return (double)(sum/heltallTabell.length);
 	}
 
-	/*Metode som returnerer den heltallsverdien som ligger nærmest
+	/*Metode som returnerer den heltallsverdien som ligger nÃ¦rmest
 	gjennomsnittverdien. Hint! Her kan du bruke Math.abs(...) som
 	returnerer absoluttverdien til uttrykket mellom parentesene.*/
 
-	public int nærHeltall() {
+	public int nÃ¦rHeltall() {
 
-		int temp = 0;
-		int helTall = 1000;
+		double temp
+		double helTall;
+		temp = 0;
+		helTall = Ã˜VREGRENSE+1;
 		int gs = 0;
 
 		for(int i = 0; i<heltallTabell.length; i++){
@@ -121,7 +123,7 @@ public class UnikeTall {
 				return heltallTabell[i];
 			}
 
-			temp = Math.abs((int)gjennomSnitt()-heltallTabell[i]);
+			temp = Math.abs(gjennomSnitt()-(double)heltallTabell[i]);
 
 			if(temp < helTall){
 				helTall = temp;
@@ -135,11 +137,11 @@ public class UnikeTall {
 	}
 
 
-	/* Metode som viser tallene i arrayen i et tekstområde, som mottas
-	som parameter. I tillegg skal det, i tekstområdet, skrives ut
-	opplysninger om hvilket tall som er minst, hvilket som er størst,
+	/* Metode som viser tallene i arrayen i et tekstomrÃ¥de, som mottas
+	som parameter. I tillegg skal det, i tekstomrÃ¥det, skrives ut
+	opplysninger om hvilket tall som er minst, hvilket som er stÃ¸rst,
 	hva som er gjennomsnittsverdien, og hvilken heltallsverdi som
-	er nærmest gjennomnittet, jfr bildet over. Gjennomsnittverdien
+	er nÃ¦rmest gjennomnittet, jfr bildet over. Gjennomsnittverdien
 	skal skrives ut med en desimal. Legg inn mellomrom mellom tallene
 	og skriv ut et passende antall tall per linje. */
 
@@ -159,9 +161,9 @@ public class UnikeTall {
 		}
 		resultat.append(line +
 						"\nMinste tall er: " + minsteTall() +
-						"\nStørste tall er: " + storsteTall() +
+						"\nStÃ¸rste tall er: " + storsteTall() +
 						"\nGjennomsnittsveriden er: " + d.format(gjennomSnitt()) +
-						"\nTallet nærmest gjennomsnittet er: " + nærHeltall());
+						"\nTallet nÃ¦rmest gjennomsnittet er: " + nÃ¦rHeltall());
 
 		JOptionPane.showMessageDialog(null, resultat, "Resultat", JOptionPane.INFORMATION_MESSAGE);
 
