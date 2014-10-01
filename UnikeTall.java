@@ -78,8 +78,8 @@ public class UnikeTall {
 
 	//Metode som finner og returnerer det største tallet i arrayen.
 
-	public int storsteTall() {
-		int storst = heltallTabell[0];
+	public int størsteTall() {
+		int størst = heltallTabell[0];
 
 		for(int i = 0; i<heltallTabell.length;i++){
 
@@ -88,7 +88,7 @@ public class UnikeTall {
 			}
 		}
 
-		return storst;
+		return størst;
 	}
 
 
