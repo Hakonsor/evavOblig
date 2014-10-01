@@ -54,7 +54,7 @@ public class UnikeTall {
 	
 	*/
 
-	private void arrayFyller(){
+	private void arrayFyller() {
 
 		Random generator = new Random();
 
@@ -214,7 +214,7 @@ public class UnikeTall {
 	
 	*/
 
-	private void resultat(){
+	private void resultat() {
 		JTextArea resultat = new JTextArea();
 		DecimalFormat d = new DecimalFormat("0.0");
 		String line = "";
