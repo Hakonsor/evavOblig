@@ -4,16 +4,14 @@ import java.util.Random;
 
 public class UnikeTall {
 
-	//Deklarerer grenser for tallene som skal settes inn i tabellen
+	// Deklarering av konstanter.
 	public static final int ØVREGRENSE = 1000;
 	public static final int NEDREGRENSE = 100;
 
-	//Deklarasjon av array for lagring av tilfeldige heltall og andre nødvendige variabler og/eller konstanter.  >
-
+	// Deklarering av arrayer for lagring av tilfeldige heltall.
 	int[] heltallTabell;
 
-	//Konstruktør som mottar arrayens lengde som parameter og oppretter arrayen.
-
+	// Opprettelse av konstruktører
 	public UnikeTall(int lengde) {
 		heltallTabell = new int[lengde];
 		arrayFyller();
@@ -24,10 +22,13 @@ public class UnikeTall {
 		arrayFyller();
 	}
 
-	/*Metode som skal undersøke om et gitt tall finnes i arrayen fra før.
-	Tallet det letes etter skal mottas som parameter.
-	Metoden skal returnere true hvis tallet finnes i arrayen.
-	Hvis ikke skal metoden returnere false.*/
+	/*
+	
+	Metode som skal undersøke om et gitt tall finnes i arrayen fra før. Tallet det
+	letes etter skal mottas som parameter. Metoden skal returnere true hvis tallet 
+	finnes i arrayen. Hvis ikke skal metoden returnere false.
+	
+	*/
 
 	public boolean tallSjekker(int tall) {
 
@@ -43,28 +44,68 @@ public class UnikeTall {
 	}
 
 
-	/*Metode som skal fylle arrayen med tilfeldige tall mellom 100 og 1000,
-	begge grenser inkludert. Metoden skal gjøre dette på en måte
-	som sikrer at alle tallene er forskjellige. Metoden skal ikke ha
-	parametre og heller ikke returnere noen verdi.*/
+	/*
+	|                                                                              |
+	Metode som fyller arrayen med tilfeldige tall fra og med 100 til og med 1000. 
+	
+	Utnytter tallSjekker() for å forsikre at alle verdiene i tabellen er unike.
+	
+	*/
 
 	public void arrayFyller(){
 
 		Random generator = new Random();
 
 		for(int i=0;i<heltallTabell.length;i++){
+			/*
+			
+			Det første NEDREGRENSE-leddet fører til at bare tall fra og med 
+			NEDREGRENSE vil bli brukt. 
+			
+			generator.nextInt()-leddet beskriver alle tallene som skal kunne legges til 
+			NEDREGRENSE for å gi intervallet. Altså vil dette leddet generere et tilfeldig
+			heltall fra og med 0 til og med ((ØVREGRENSE-NEDREGRENSE)+1). 
+			
+			Når nextInt()-metoden blir matet med en grense, så er den grensen eksklusiv. Da
+			oppgaven spesifiserer at ØVREGRENSE skal være inkludert, blir det nødvendig å 
+			legge til 1 (derav +1).
+			
+			*/
+			
 			int sjekker = NEDREGRENSE + generator.nextInt((ØVREGRENSE-NEDREGRENSE)+1);
+			
+			/*
+			
+			Denne if-testen undersøker om sjekkervariabelen har en verdi som allerede
+			eksisterer i arrayen. Hvis testen returnerer true vil tellervariabelen gå
+			tilbake til forrige verdi og prøve på nytt til testen returnerer false, i 
+			hvilket tilfelle så lagres sjekkervariabelens verdi i arrayen ved indeks gitt
+			av tellervariabelen.
+			
+			*/
+			
 			if(tallSjekker(sjekker)) {
 				i--;
 			}
 			else {
 				heltallTabell[i] = sjekker;
 			}
-		}
-	}
+		} // Slutt på for-løkke
+	} // Slutt på arrayFyller()
 
 
-	//Metode som finner og returnerer det minste tallet i arrayen. >
+	/* 
+	
+	Metode som finner og returnerer det minste tallet i arrayen. Starter ved å sette
+	en variabel lik det første arrayelementet, for så å kjøre en itererende løkke
+	som sammenlikner sjekkervariabelen med elementet som stemmer overens med løkkens
+	indeks. 
+	
+	Dersom elementet er mindre enn sjekkervariabelen, vil sjekkervariabelen bli gitt
+	verdien til elementet før løkken kjøres på nytt, og sammenlikner den nye minste
+	verdien så langt. Til slutt returneres den minste verdien.
+	
+	*/
 
 	public int minsteTall() {
 		int minst = heltallTabell[0];
@@ -80,8 +121,13 @@ public class UnikeTall {
 	}
 
 
-	//Metode som finner og returnerer det største tallet i arrayen.
+	/*
+	
+	Metode som finner og returnerer det største tallet i arrayen. Bruker en enkel
+	test på samme måte som minsteTall() gjør.
 
+	*/
+	
 	public int størsteTall() {
 		int størst = heltallTabell[0];
 
@@ -96,9 +142,14 @@ public class UnikeTall {
 	}
 
 
-	//Metode som beregner og returnerer den gjennomstnittlige verdien (double-verdi) av tallene i arrayen.
+	/*
+	
+	Metode som beregner og returnerer den gjennomstnittlige verdien av tallene i 
+	arrayen som double. Bruker en for-løkke for å summere alle elementene.
+	
+	*/
 
-	public double gjennomSnitt(){
+	public double gjennomSnitt() {
 
 		double sum = 0;
 
@@ -109,9 +160,16 @@ public class UnikeTall {
 		return (double)(sum/heltallTabell.length);
 	}
 
-	/*Metode som returnerer den heltallsverdien som ligger nærmest
-	gjennomsnittverdien. Hint! Her kan du bruke Math.abs(...) som
-	returnerer absoluttverdien til uttrykket mellom parentesene.*/
+	/*
+	|                                                                              |
+	Metode som finner heltallselementet i arrayen som kommer aller nærmest snittet
+	av arrayen. Undersøker også om snittet faktisk er et heltall som matcher ett av
+	tallene i arrayen ved bruk av en test.
+	
+	Math.abs() forsikrer at man ikke får et negativt tall som resultat av
+	differansen mellom gjennomSnitt() og heltallTabell[i].
+	
+	*/
 
 	public int nærHeltall() {
 
@@ -141,13 +199,18 @@ public class UnikeTall {
 	}
 
 
-	/* Metode som viser tallene i arrayen i et tekstområde, som mottas
-	som parameter. I tillegg skal det, i tekstområdet, skrives ut
-	opplysninger om hvilket tall som er minst, hvilket som er størst,
-	hva som er gjennomsnittsverdien, og hvilken heltallsverdi som
-	er nærmest gjennomnittet, jfr bildet over. Gjennomsnittverdien
+	/* 
+	|                                                                              |
+	Metode som viser tallene i arrayen i et tekstområde, som mottas som parameter. 
+	I tillegg skal det, i tekstområdet, skrives ut opplysninger om hvilket tall som
+	er minst, hvilket som er størst,hva som er gjennomsnittsverdien, og hvilken 
+	heltallsverdi som er nærmest gjennomnittet, jfr bildet over. Gjennomsnittverdien
 	skal skrives ut med en desimal. Legg inn mellomrom mellom tallene
-	og skriv ut et passende antall tall per linje. */
+	og skriv ut et passende antall tall per linje. 
+	
+	TODO: Finn en måte å implementere parameterdelen av kravet på
+	
+	*/
 
 	public void Resultat(){
 		JTextArea resultat = new JTextArea();
@@ -172,6 +235,6 @@ public class UnikeTall {
 		JOptionPane.showMessageDialog(null, resultat, "Resultat", JOptionPane.INFORMATION_MESSAGE);
 
 
-	}//End of Resultat
+	} // Slutt på Resultat()
 
-}//End of class
+} // Slutt på klasse
