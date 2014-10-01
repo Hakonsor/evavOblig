@@ -1,6 +1,6 @@
-public class Oppgave2 {
+public class UnikeTallTest {
 
-	//Må vurdere om vi skal hardkode dette rett inn i parantesen eller om
+	//MÃ¥ vurdere om vi skal hardkode dette rett inn i parantesen eller om
 	//vi skal ha et public static int. Stud.ass. sier begge funker fett
 	public static int antallTall = 64;
 
