@@ -45,7 +45,7 @@ public class UnikeTall {
 
 
 	/*
-	|                                                                              |
+	
 	Metode som fyller arrayen med tilfeldige tall fra og med 100 til og med 1000. 
 	
 	Utnytter tallSjekker() for å forsikre at alle verdiene i tabellen er unike.
@@ -161,7 +161,7 @@ public class UnikeTall {
 	}
 
 	/*
-	|                                                                              |
+	
 	Metode som finner heltallselementet i arrayen som kommer aller nærmest snittet
 	av arrayen. Undersøker også om snittet faktisk er et heltall som matcher ett av
 	tallene i arrayen ved bruk av en test.
@@ -200,7 +200,7 @@ public class UnikeTall {
 
 
 	/* 
-	|                                                                              |
+	
 	Metode som viser tallene i arrayen i et tekstområde, som mottas som parameter. 
 	I tillegg skal det, i tekstområdet, skrives ut opplysninger om hvilket tall som
 	er minst, hvilket som er størst,hva som er gjennomsnittsverdien, og hvilken 
