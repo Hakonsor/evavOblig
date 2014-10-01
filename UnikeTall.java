@@ -18,7 +18,11 @@ public class UnikeTall {
 		heltallTabell = new int[lengde];
 		arrayFyller();
 	}
-
+	
+	public UnikeTall() {
+		heltallTabell = new int[64]
+		arrayFyller();
+	}
 
 	/*Metode som skal undersøke om et gitt tall finnes i arrayen fra før.
 	Tallet det letes etter skal mottas som parameter.
