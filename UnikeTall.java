@@ -49,7 +49,7 @@ public class UnikeTall {
 		Random generator = new Random();
 
 		for(int i=0;i<heltallTabell.length;i++){
-			int sjekker = NEDREGRENSE + generator.nextInt(ØVREGRENSE);
+			int sjekker = NEDREGRENSE + generator.nextInt((ØVREGRENSE-NEDREGRENSE)+1);
 			if(tallSjekker(sjekker)) {
 				i--;
 			}
