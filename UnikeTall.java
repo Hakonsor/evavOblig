@@ -15,11 +15,13 @@ public class UnikeTall {
 	public UnikeTall(int lengde) {
 		heltallTabell = new int[lengde];
 		arrayFyller();
+		resultat();
 	}
 	
 	public UnikeTall() {
 		heltallTabell = new int[64]
 		arrayFyller();
+		resultat();
 	}
 
 	/*
@@ -212,7 +214,7 @@ public class UnikeTall {
 	
 	*/
 
-	private void Resultat(){
+	private void resultat(){
 		JTextArea resultat = new JTextArea();
 		DecimalFormat d = new DecimalFormat("0.0");
 		String line = "";
@@ -235,6 +237,6 @@ public class UnikeTall {
 		JOptionPane.showMessageDialog(null, resultat, "Resultat", JOptionPane.INFORMATION_MESSAGE);
 
 
-	} // Slutt på Resultat()
+	} // Slutt på resultat()
 
 } // Slutt på klasse
