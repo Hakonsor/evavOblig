@@ -5,7 +5,7 @@ import java.util.Random;
 public class UnikeTall {
 
 	//Deklarerer grenser for tallene som skal settes inn i tabellen
-	public static final int ØVREGRENSE = 900;
+	public static final int ØVREGRENSE = 1000;
 	public static final int NEDREGRENSE = 100;
 
 	//Deklarasjon av array for lagring av tilfeldige heltall og andre nødvendige variabler og/eller konstanter.  >
