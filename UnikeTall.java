@@ -30,7 +30,7 @@ public class UnikeTall {
 	
 	*/
 
-	public boolean tallSjekker(int tall) {
+	private boolean tallSjekker(int tall) {
 
 
 		for(int k=0; k<heltallTabell.length; k++){
@@ -52,7 +52,7 @@ public class UnikeTall {
 	
 	*/
 
-	public void arrayFyller(){
+	private void arrayFyller(){
 
 		Random generator = new Random();
 
@@ -107,7 +107,7 @@ public class UnikeTall {
 	
 	*/
 
-	public int minsteTall() {
+	private int minsteTall() {
 		int minst = heltallTabell[0];
 
 		for(int i = 0; i<heltallTabell.length;i++) {
@@ -128,7 +128,7 @@ public class UnikeTall {
 
 	*/
 	
-	public int størsteTall() {
+	private int størsteTall() {
 		int størst = heltallTabell[0];
 
 		for(int i = 0; i<heltallTabell.length;i++){
@@ -149,7 +149,7 @@ public class UnikeTall {
 	
 	*/
 
-	public double gjennomSnitt() {
+	private double gjennomSnitt() {
 
 		double sum = 0;
 
@@ -171,7 +171,7 @@ public class UnikeTall {
 	
 	*/
 
-	public int nærHeltall() {
+	private int nærHeltall() {
 
 		double temp
 		double helTall;
@@ -212,7 +212,7 @@ public class UnikeTall {
 	
 	*/
 
-	public void Resultat(){
+	private void Resultat(){
 		JTextArea resultat = new JTextArea();
 		DecimalFormat d = new DecimalFormat("0.0");
 		String line = "";
