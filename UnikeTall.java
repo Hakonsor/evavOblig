@@ -16,7 +16,7 @@ public class UnikeTall {
 
 	public UnikeTall(int lengde) {
 		heltallTabell = new int[lengde];
-		fylle();
+		arrayFyller();
 	}
 
 
@@ -44,7 +44,7 @@ public class UnikeTall {
 	som sikrer at alle tallene er forskjellige. Metoden skal ikke ha
 	parametre og heller ikke returnere noen verdi.*/
 
-	public void fylle(){
+	public void arrayFyller(){
 
 		Random generator = new Random();
 
